@@ -3,41 +3,170 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon site</title>
-
+  <title>BLAST★PIT — Forged in Sound</title>
   <meta name="theme-color" content="#000000">
 
   <style>
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: #000000;
+      gap: 44px;
+      padding: 40px 20px;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
 
-    img {
+    .visual {
       max-width: 100%;
+      max-height: 46vh;
       height: auto;
+    }
+
+    /* --- Bloc inscription --- */
+    .signup {
+      width: 100%;
+      max-width: 340px;
+      text-align: center;
+    }
+
+    .signup__label {
+      margin: 0 0 18px;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #cfcfcf;
+    }
+
+    .signup form { display: flex; flex-direction: column; gap: 12px; }
+
+    .signup input[type="email"] {
+      width: 100%;
+      padding: 14px 16px;
+      background: transparent;
+      border: 1px solid #444;
+      color: #fff;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-align: center;
+      outline: none;
+      transition: border-color .2s ease;
+    }
+    .signup input[type="email"]::placeholder { color: #777; letter-spacing: 1px; }
+    .signup input[type="email"]:focus { border-color: #fff; }
+
+    .signup button {
+      width: 100%;
+      padding: 14px 16px;
+      background: #fff;
+      color: #000;
+      border: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity .2s ease;
+    }
+    .signup button:hover { opacity: .85; }
+    .signup button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+    .signup__consent {
+      margin: 16px 0 0;
+      font-size: 10px;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    /* Message de remerciement (caché au départ) */
+    .signup__done {
+      display: none;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1.7;
+    }
+
+    /* Champ anti-spam invisible (honeypot Brevo) — ne pas afficher */
+    .hidden-field { position: absolute; left: -9999px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
     }
   </style>
 </head>
 
 <body>
 
-  <img src="site_coming_soon.jpg" alt="Site coming soon">
+  <!-- Ton visuel COMING SOON + logo -->
+  <img class="visual" src="site_coming_soon.jpg" alt="BLAST★PIT — Forged in Sound — Coming soon">
 
-  <!-- Audio invisible -->
+  <!-- Bloc inscription liste d'attente -->
+  <div class="signup">
+    <p class="signup__label">Le lancement approche</p>
+
+    <form id="waitlist-form"
+          method="POST"
+          action="https://4b66c303.sibforms.com/serve/MUIFACTWP8a6BKnr8UhXrOQhBitAv-BOLvI9TZMrZdC_sfkCoWYe2eQrCCjzMyuNznxJ-PliQQBldeC-2iW4AlC8VIlvNP--P0v2yRCFy_XBvi12q11aCGRa9Xp84umE5lyAmOqbgCkVQh6n0MJ1Xs2heeArh7yzgkDbw51xfHyr4JI1gXmRm_5uWC_gVFL_1kp9NQ0CfM0XuVrH9Q=="
+          target="brevo-sink">
+
+      <input type="email" name="EMAIL" placeholder="ton@email.com"
+             autocomplete="email" required>
+
+      <button type="submit">Préviens-moi</button>
+
+      <!-- Honeypot anti-spam Brevo : doit rester vide -->
+      <div class="hidden-field" aria-hidden="true">
+        <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off">
+      </div>
+      <input type="hidden" name="locale" value="fr">
+
+      <p class="signup__consent">
+        En laissant ton email, tu acceptes de recevoir les actualités de
+        BLAST★PIT. Désinscription possible à tout moment.
+      </p>
+    </form>
+
+    <p class="signup__done" id="waitlist-done">
+      Tu es sur la liste.<br>Forged in Sound.
+    </p>
+  </div>
+
+  <!-- Reçoit la réponse Brevo sans quitter la page -->
+  <iframe name="brevo-sink" style="display:none" aria-hidden="true"></iframe>
+
+  <!-- Musique au premier clic -->
   <audio id="music" loop>
     <source src="son_pour_le_site1.mp3" type="audio/mpeg">
   </audio>
 
   <script>
-    document.addEventListener('click', () => {
-      const audio = document.getElementById('music');
-      audio.play();
+    // Lance la musique au premier clic n'importe où
+    document.addEventListener('click', function () {
+      var audio = document.getElementById('music');
+      if (audio) { audio.play().catch(function(){}); }
     }, { once: true });
+
+    // Affiche le message de remerciement après envoi (la page ne recharge pas)
+    var form = document.getElementById('waitlist-form');
+    form.addEventListener('submit', function () {
+      var email = form.querySelector('input[name="EMAIL"]');
+      if (email && email.value.trim() !== '') {
+        setTimeout(function () {
+          form.style.display = 'none';
+          document.querySelector('.signup__label').style.display = 'none';
+          document.getElementById('waitlist-done').style.display = 'block';
+        }, 400);
+      }
+    });
   </script>
 
 </body>

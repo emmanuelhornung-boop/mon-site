@@ -3,311 +3,184 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BLAST★PIT — Vêtements rock &amp; metal, coton bio 250 g/m²</title>
+  <title>BLAST★PIT - Forged in Sound</title>
   <meta name="theme-color" content="#000000">
 
-  <meta name="description" content="BLAST★PIT — Vêtements rock &amp; metal. Coton bio 250 g/m², double jersey, confectionné au Portugal, brodé en France. Sobre par choix, puissant par nature.">
+  <!-- Description affichée par Google dans les résultats de recherche -->
+  <meta name="description" content="BLAST★PIT - Vêtements rock &amp; metal. Sobre par choix, puissant par nature. Rejoins le Pit.">
 
+  <!-- Aperçu lors du partage sur Instagram, WhatsApp, Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="BLAST★PIT - Forged in Sound">
-  <meta property="og:description" content="Vêtements rock &amp; metal. Coton bio 250 g/m², confectionné au Portugal, brodé en France. Sobre par choix, puissant par nature.">
+  <meta property="og:description" content="Vêtements rock &amp; metal. Sobre par choix, puissant par nature. Drop à venir, rejoins le Pit.">
   <meta property="og:image" content="https://blastpit.co/site_coming_soon.jpg">
   <meta property="og:url" content="https://blastpit.co/">
   <meta name="twitter:card" content="summary_large_image">
 
-<style>
-  :root{
-    --ink:#000;
-    --paper:#EDEEEF;
-    --paper-deep:#E2E4E5;
-    --rule:#C9CCCE;
-    --mute:#6E7274;
-    --dim:#8C9093;
-    --max:1040px;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;
-    background:var(--ink);
-    color:#fff;
-    font-family:'Helvetica Neue',Arial,sans-serif;
-    font-size:16px;line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
-  :focus-visible{outline:2px solid #fff;outline-offset:3px}
-  img{max-width:100%;display:block}
+  <style>
+    * { box-sizing: border-box; }
 
-  /* ---------------- HERO ---------------- */
-  .hero{padding:46px 0 58px;text-align:center}
-  .hero .visual{margin:0 auto;max-height:40vh;height:auto;width:auto}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 44px;
+      padding: 40px 20px;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  /* Titre lu par Google, invisible à l'écran (le logo le porte déjà) */
-  h1{position:absolute;left:-9999px}
+    .visual {
+      max-width: 100%;
+      max-height: 46vh;
+      height: auto;
+    }
 
-  .drop-line{
-    font-size:clamp(21px,5.2vw,32px);font-weight:700;
-    letter-spacing:-.01em;margin:38px 0 0;line-height:1.15;
-  }
-  .drop-sub{margin:14px auto 0;max-width:46ch;color:#B7BBBD;font-size:15.5px}
-  .baseline{
-    display:block;margin-top:14px;color:#fff;
-    font-size:14px;letter-spacing:2.5px;text-transform:uppercase;
-  }
+    /* --- Bloc inscription --- */
+    .signup {
+      width: 100%;
+      max-width: 340px;
+      text-align: center;
+    }
 
-  /* ---------------- FORMULAIRE ---------------- */
-  .signup{width:100%;max-width:360px;margin:34px auto 0;text-align:center}
-  .signup form{display:flex;flex-direction:column;gap:12px}
-  .signup input[type="email"]{
-    width:100%;padding:14px 16px;background:transparent;
-    border:1px solid #444;color:#fff;font-size:15px;
-    letter-spacing:1px;text-align:center;outline:none;
-    transition:border-color .2s ease;
-  }
-  .signup input[type="email"]::placeholder{color:#777}
-  .signup input[type="email"]:focus{border-color:#fff}
-  .signup button{
-    width:100%;padding:14px 16px;background:#fff;color:#000;border:none;
-    font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-    cursor:pointer;transition:opacity .2s ease;
-  }
-  .signup button:hover{opacity:.85}
-  .perk{margin:0 0 16px;font-size:14.5px;line-height:1.6;color:#fff}
-  .perk b{display:block;font-weight:700}
-  .perk span{color:var(--dim)}
-  .signup__consent{margin:14px 0 0;font-size:10.5px;line-height:1.6;color:#666}
-  .signup__done{
-    display:none;font-size:13px;letter-spacing:2px;text-transform:uppercase;
-    line-height:1.8;
-  }
-  .hidden-field{position:absolute;left:-9999px}
+    .signup__label {
+      margin: 0 0 18px;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #cfcfcf;
+    }
 
-  .sound-btn{
-    margin-top:24px;background:none;border:1px solid #333;color:var(--dim);
-    font-size:11px;letter-spacing:2px;text-transform:uppercase;
-    padding:9px 16px;cursor:pointer;
-  }
-  .sound-btn:hover{border-color:#777;color:#fff}
+    .signup form { display: flex; flex-direction: column; gap: 12px; }
 
-  /* ---------------- PRODUIT (bande claire) ---------------- */
-  .proof{background:var(--paper);color:#0A0A0A;padding:64px 0}
-  .proof h2{
-    font-size:clamp(20px,4.4vw,28px);font-weight:700;letter-spacing:-.01em;
-    margin:0 0 34px;max-width:22ch;
-  }
-  .grid{display:grid;gap:26px;grid-template-columns:1fr}
-  figure{margin:0}
-  .grid img{
-    width:100%;aspect-ratio:4/5;object-fit:cover;
-    background:var(--paper-deep);border:1px solid var(--rule);
-  }
-  .grid figcaption{margin:12px 0 0;font-size:15px}
-  .grid figcaption b{display:block;font-size:15.5px;margin-bottom:3px}
-  .grid figcaption em{font-style:normal;color:var(--mute)}
+    .signup input[type="email"] {
+      width: 100%;
+      padding: 14px 16px;
+      background: transparent;
+      border: 1px solid #444;
+      color: #fff;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-align: center;
+      outline: none;
+      transition: border-color .2s ease;
+    }
+    .signup input[type="email"]::placeholder { color: #777; letter-spacing: 1px; }
+    .signup input[type="email"]:focus { border-color: #fff; }
 
-  .specs-title{
-    margin:44px 0 14px;font-size:12px;letter-spacing:3px;
-    text-transform:uppercase;color:var(--mute);font-weight:600;
-  }
-  .specs{
-    display:flex;flex-wrap:wrap;gap:8px 30px;
-    font-size:14.5px;color:var(--mute);
-  }
-  .specs span{display:flex;gap:8px}
-  .specs b{color:#0A0A0A;font-weight:600}
+    .signup button {
+      width: 100%;
+      padding: 14px 16px;
+      background: #fff;
+      color: #000;
+      border: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity .2s ease;
+    }
+    .signup button:hover { opacity: .85; }
+    .signup button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 
-  .prices{
-    margin:26px 0 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
-    padding:22px 0;display:flex;flex-wrap:wrap;gap:10px 36px;align-items:baseline;
-  }
-  .prices div{display:flex;gap:10px;align-items:baseline}
-  .prices b{font-size:21px}
-  .prices em{font-style:normal;color:var(--mute);font-size:15px}
+    .signup__consent {
+      margin: 16px 0 0;
+      font-size: 10px;
+      line-height: 1.6;
+      color: #666;
+    }
 
-  /* ---------------- POURQUOI ---------------- */
-  .story{padding:70px 0 0}
-  .story h2{font-size:clamp(20px,4.4vw,28px);margin:0;letter-spacing:-.01em}
-  .story h3{
-    font-size:12px;letter-spacing:3px;text-transform:uppercase;
-    color:var(--dim);margin:32px 0 8px;font-weight:400;
-  }
-  .story p{margin:0 0 14px;color:#C7CBCD;max-width:58ch}
-  .story strong{color:#fff;letter-spacing:1px}
+    /* Message de remerciement (caché au départ) */
+    .signup__done {
+      display: none;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1.7;
+    }
 
-  /* ---------------- BUSTE EN ATTENTE ---------------- */
-  .waiting{margin:66px 0 0;text-align:center}
-  .waiting img{max-width:460px;width:100%;margin:0 auto}
-  .waiting figcaption{margin:22px 0 0;font-size:15px;letter-spacing:1px;color:#fff}
+    /* Champ anti-spam invisible (honeypot Brevo) — ne pas afficher */
+    .hidden-field { position: absolute; left: -9999px; }
 
-  /* ---------------- RAPPEL ---------------- */
-  .recall{border-top:1px solid #2A2A2A;margin-top:66px;padding:52px 0;text-align:center}
-  .recall h2{font-size:clamp(19px,4.2vw,26px);margin:0 0 8px}
-  .recall p{margin:0;color:#B7BBBD;font-size:15.5px}
-
-  /* ---------------- PIED ---------------- */
-  footer{border-top:1px solid #1E1E1E;padding:30px 0 44px;font-size:12.5px;color:#6A6E70;text-align:center}
-  footer p{margin:0 0 6px}
-  footer a{color:#9A9E9F;text-decoration:underline;text-underline-offset:2px}
-
-  @media (min-width:760px){
-    .grid{grid-template-columns:repeat(3,1fr);gap:24px}
-    .proof{padding:88px 0}
-  }
-  @media (prefers-reduced-motion:reduce){*{transition:none !important}}
-</style>
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ============ HERO ============ -->
-<header class="hero wrap">
-  <img class="visual" src="site_coming_soon.jpg" alt="BLAST★PIT — Forged in Sound">
+  <!-- Ton visuel COMING SOON + logo -->
+  <img class="visual" src="site_coming_soon.jpg" alt="BLAST★PIT — Forged in Sound — Coming soon">
 
-  <h1>BLAST★PIT — Vêtements rock &amp; metal, coton bio confectionné au Portugal</h1>
-
-  <!-- Remplacer « bientôt » par « en novembre » dès confirmation Linery Merch -->
-  <p class="drop-line">Le lancement arrive bientôt.</p>
-  <p class="drop-sub">
-    Coton bio 250 g/m², double jersey. Confectionné au Portugal, brodé en France.
-    <span class="baseline">Sobre par choix, puissant par nature.</span>
-  </p>
-
+  <!-- Bloc inscription liste d'attente -->
+  <!-- data-nosnippet : empêche Google d'utiliser ce texte dans les résultats -->
   <div class="signup" data-nosnippet>
-    <p class="perk">
-      <b>Accès 48 h avant tout le monde.</b>
-      <span>Port offert les deux premières semaines.</span>
-    </p>
+    <p class="signup__label">Rejoins le Pit. Sois le premier informé du drop.</p>
 
-    <form id="waitlist-form" method="POST"
-      action="https://4b66c303.sibforms.com/serve/MUIFACTWP8a6BKnr8UhXrOQhBitAv-BOLvI9TZMrZdC_sfkCoWYe2eQrCCjzMyuNznxJ-PliQQBldeC-2iW4AlC8VIlvNP--P0v2yRCFy_XBvi12q11aCGRa9Xp84umE5lyAmOqbgCkVQh6n0MJ1Xs2heeArh7yzgkDbw51xfHyr4JI1gXmRm_5uWC_gVFL_1kp9NQ0CfM0XuVrH9Q=="
-      target="brevo-sink">
+    <form id="waitlist-form"
+          method="POST"
+          action="https://4b66c303.sibforms.com/serve/MUIFACTWP8a6BKnr8UhXrOQhBitAv-BOLvI9TZMrZdC_sfkCoWYe2eQrCCjzMyuNznxJ-PliQQBldeC-2iW4AlC8VIlvNP--P0v2yRCFy_XBvi12q11aCGRa9Xp84umE5lyAmOqbgCkVQh6n0MJ1Xs2heeArh7yzgkDbw51xfHyr4JI1gXmRm_5uWC_gVFL_1kp9NQ0CfM0XuVrH9Q=="
+          target="brevo-sink">
 
-      <label for="email" style="position:absolute;left:-9999px">Ton email</label>
-      <input id="email" type="email" name="EMAIL" placeholder="ton@email.com" autocomplete="email" required>
+      <input type="email" name="EMAIL" placeholder="ton@email.com"
+             autocomplete="email" required>
+
       <button type="submit">Je rejoins le Pit</button>
 
+      <!-- Honeypot anti-spam Brevo : doit rester vide -->
       <div class="hidden-field" aria-hidden="true">
         <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off">
       </div>
       <input type="hidden" name="locale" value="fr">
 
       <p class="signup__consent">
-        En laissant ton email, tu acceptes de recevoir les actualités de BLAST★PIT.
-        Désinscription possible à tout moment.
+        En laissant ton email, tu acceptes de recevoir les actualités de
+        BLAST★PIT. Désinscription possible à tout moment.
       </p>
     </form>
 
-    <p class="signup__done" id="waitlist-done" role="status">
-      Bienvenue dans le Pit.<br>Tu es sur la liste.<br>Forged in Sound
+    <p class="signup__done" id="waitlist-done">
+      Bienvenue dans le Pit.<br>Tu es sur la liste.<br>FORGED IN SOUND
     </p>
   </div>
 
-  <button class="sound-btn" id="sound-btn" type="button">▶ Son</button>
-</header>
+  <!-- Reçoit la réponse Brevo sans quitter la page -->
+  <iframe name="brevo-sink" style="display:none" aria-hidden="true"></iframe>
 
-<!-- ============ PRODUIT ============ -->
-<section class="proof">
-  <div class="wrap">
-    <h2>Le détail fait la pièce.</h2>
+  <!-- Musique au premier clic -->
+  <audio id="music" loop>
+    <source src="son_pour_le_site1.mp3" type="audio/mpeg">
+  </audio>
 
-    <div class="grid">
-      <figure>
-        <img src="images/broderie.jpg" alt="Broderie du logo BLAST★PIT en lumière rasante">
-        <figcaption><b>Broderie, pas impression</b><em>Brodé fil à fil, en Alsace. Ne craquelle pas, ne part pas au lavage.</em></figcaption>
-      </figure>
-      <figure>
-        <img src="images/etiquette-col.jpg" alt="Étiquette de col tissée, Made in Portugal">
-        <figcaption><b>Confectionné au Portugal</b><em>Étiquette tissée, pas de transfert imprimé dans le col.</em></figcaption>
-      </figure>
-      <figure>
-        <img src="images/etiquette-core.jpg" alt="Étiquette carton Core Collection">
-        <figcaption><b>Core Collection</b><em>La ligne permanente. Pas une capsule, pas un merch de tournée.</em></figcaption>
-      </figure>
-    </div>
+  <script>
+    // Lance la musique au premier clic n'importe où
+    document.addEventListener('click', function () {
+      var audio = document.getElementById('music');
+      if (audio) { audio.play().catch(function(){}); }
+    }, { once: true });
 
-    <p class="specs-title">Le t-shirt</p>
-    <div class="specs">
-      <span><b>Matière</b> 100 % coton bio</span>
-      <span><b>Grammage</b> 250 g/m²</span>
-      <span><b>Tricot</b> double jersey</span>
-      <span><b>Coupe</b> relaxed</span>
-      <span><b>Origine</b> Portugal, brodé en France</span>
-    </div>
-
-    <div class="prices">
-      <div><b>60 €</b><em>T-shirt</em></div>
-      <div><b>45 €</b><em>Casquette</em></div>
-      <div><em>Livraison Mondial Relay · retours 14 jours</em></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ POURQUOI BLAST★PIT ============ -->
-<section class="story wrap">
-  <h2>Pourquoi BLAST★PIT ?</h2>
-
-  <h3>Le nom</h3>
-  <p>Blast, comme le blast beat, cette rafale de batterie qui donne au metal extrême sa violence. Pit, comme le mosh pit, l'endroit où le public se met à se bousculer au milieu du concert.<br>
-  Deux mots de la scène. L'un c'est le son, l'autre c'est la foule.</p>
-
-  <h3>La marque</h3>
-  <p>Vingt ans que j'écoute cette musique. J'ai joué en groupe pendant près de dix ans. Sur scène, j'avais déjà des vêtements sobres, au design épuré. Et l'envie de montrer mon amour pour cette musique de façon subtile est toujours là.<br>
-  Ces pièces-là, je les cherche encore.<br>
-  Alors je me suis lancé.</p>
-
-  <h3>Le style</h3>
-  <p>Des vêtements pour porter cette musique tous les jours, pas seulement au concert. Pour les amoureux du son extrême, avec un style sobre par choix et puissant par nature.</p>
-  <p><strong>Forged in Sound.</strong></p>
-
-  <!-- Ne publier qu'une fois la date de novembre confirmée -->
-  <figure class="waiting">
-    <img src="images/buste-chene.jpg" alt="Mannequin buste en chêne massif, vide">
-    <figcaption>Les pièces arrivent en novembre.</figcaption>
-  </figure>
-</section>
-
-<!-- ============ RAPPEL ============ -->
-<section class="recall wrap">
-  <h2>Rejoins le Pit.</h2>
-  <p>Accès 48 h avant tout le monde, port offert les deux premières semaines. Le formulaire est en haut de page.</p>
-</section>
-
-<footer class="wrap">
-  <p>BLAST★PIT® — marque déposée. TVA non applicable, art. 293 B du CGI.</p>
-  <p>12 rue de la Part-Dieu, 69003 Lyon</p>
-  <p>
-    <a href="mailto:contact@blastpit.co">contact@blastpit.co</a> ·
-    <a href="mentions-legales.html">Mentions légales</a> ·
-    <a href="https://instagram.com/blastpit.co">Instagram</a>
-  </p>
-</footer>
-
-<iframe name="brevo-sink" style="display:none" aria-hidden="true" title="Brevo"></iframe>
-
-<audio id="music" loop preload="none">
-  <source src="son_pour_le_site1.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-  var audio = document.getElementById('music');
-  var btn   = document.getElementById('sound-btn');
-  btn.addEventListener('click', function(){
-    if (audio.paused) { audio.play().catch(function(){}); btn.textContent = '■ Son'; }
-    else { audio.pause(); btn.textContent = '▶ Son'; }
-  });
-
-  var form = document.getElementById('waitlist-form');
-  form.addEventListener('submit', function () {
-    var email = form.querySelector('input[name="EMAIL"]');
-    if (email && email.value.trim() !== '') {
-      setTimeout(function () {
-        form.style.display = 'none';
-        document.querySelector('.perk').style.display = 'none';
-        document.getElementById('waitlist-done').style.display = 'block';
-      }, 400);
-    }
-  });
-</script>
+    // Affiche le message de remerciement après envoi (la page ne recharge pas)
+    var form = document.getElementById('waitlist-form');
+    form.addEventListener('submit', function () {
+      var email = form.querySelector('input[name="EMAIL"]');
+      if (email && email.value.trim() !== '') {
+        setTimeout(function () {
+          form.style.display = 'none';
+          document.querySelector('.signup__label').style.display = 'none';
+          document.getElementById('waitlist-done').style.display = 'block';
+        }, 400);
+      }
+    });
+  </script>
 
 </body>
 </html>
+
